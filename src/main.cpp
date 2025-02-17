@@ -6,11 +6,12 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 EnergyMonitor emon1;
 
-float ruido = 0.05;
-int tensao = 220;
+#define ruido 0.05        // Valor de ruído
+#define tensao 220        // Tensão da rede
+#define sensorPin A0      // Sensor de corrente
+#define calibracao 9.78   // Valor de calibração
 
-
-char ssid[] = "Sua red";
+char ssid[] = "Sua rede";
 char pass[] = "Senha da rede";
 const char* mqtt_server = "Server MQTT IP";
 const int mqtt_port = 1883;
@@ -56,7 +57,7 @@ void setup() {
   client.setServer(mqtt_server, mqtt_port);
   client.setCallback(callback);
 
-  emon1.current(A0, 9.78); // Pino de entrada e calibração
+  emon1.current(sensorPin, calibracao);
 }
 
 void loop() {
