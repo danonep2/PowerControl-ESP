@@ -52,6 +52,7 @@ EmonLib: [Site oficial](https://docs.arduino.cc/libraries/emonlib/)
 Com o pacote baixado, você precisa extrair e copiar o conteudo para a pasta `.pio/libdeps/d1_mini_env`
 
 Com tudo configurado, basta ir novamente na extensão do projeto na esquerda, clicar em build e depois em upload. Com isso, o software do sistema está quase pronto (verifique as observações no final)
+<img src="./assets/img/img04.png">
 
 ## Montagem
 ### Itens necessários 📋
